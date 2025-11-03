@@ -25,6 +25,22 @@ export default function WelcomeScreen(_props: Props) {
           <Text style={styles.orderNow}>Order Now 🛒</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.searchNowButtonContainer}>
+        <TouchableOpacity
+          style={styles.orderNowButton}
+          onPress={() => router.push("/search")}
+        >
+          <Text style={styles.orderNow}>Search for Places 🔎</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.searchNowButtonContainer}>
+        <TouchableOpacity
+          style={styles.orderNowButton}
+          onPress={() => router.push("/profile")}
+        >
+          <Text style={styles.orderNow}>My Profile 🧑</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -55,6 +71,13 @@ const styles = StyleSheet.create({
   },
   orderNowButtonContainer: {
     marginTop: 48,
+    backgroundColor: "#ccc7c2",
+    paddingBottom: 8,
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    borderRadius: 12,
+  },
+  searchNowButtonContainer: {
+    marginTop: 12,
     backgroundColor: "#ccc7c2",
     paddingBottom: 8,
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",

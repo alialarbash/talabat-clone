@@ -119,6 +119,36 @@ const _layout = () => {
           headerLeft: () => <BackButton />,
         }}
       />
+      <Stack.Screen
+        name="search"
+        options={{
+          title: "Search",
+
+          headerTitleAlign: "left",
+          headerBackVisible: false,
+          headerLeft: () => <BackButton />,
+        }}
+      />
+      <Stack.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+
+          headerTitleAlign: "left",
+          headerBackVisible: false,
+          headerLeft: () => <BackButton />,
+        }}
+      />
+      <Stack.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+
+          headerTitleAlign: "left",
+          headerBackVisible: false,
+          headerLeft: () => <BackButton />,
+        }}
+      />
     </Stack>
   );
 };

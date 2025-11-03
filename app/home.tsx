@@ -50,7 +50,7 @@ export default function HomeScreen(_props: Props) {
                 <View
                   style={[
                     styles.restaurantDeliveryTimeContainer,
-                    { width: timePrecentage[index] },
+                    { width: timePrecentage[index] as any },
                   ]}
                 >
                   <Text style={styles.restaurantDeliveryTimeIcon}>🏠</Text>
@@ -62,7 +62,7 @@ export default function HomeScreen(_props: Props) {
                 <View
                   style={[
                     styles.restaurantDeliveryRoad,
-                    { width: timePrecentage[index] },
+                    { width: timePrecentage[index] as any },
                   ]}
                 ></View>
               </TouchableOpacity>
