@@ -5,11 +5,11 @@
     "scheme": "talabaclone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/talabat-icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/talabat-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
