@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { Colors } from "../components/Colors";
+import { Colors } from "../../components/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { useRouter } from "expo-router";

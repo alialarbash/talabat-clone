@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from "react-native";
 import { useRouter } from "expo-router";
-import { Colors } from "../components/Colors";
+import { Colors } from "../../components/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
 type Props = {};
@@ -82,7 +82,7 @@ export default function ProfileScreen(_props: Props) {
           style={[styles.actionButton, styles.logoutButton]}
           onPress={() => {
             router.dismissAll();
-            // router.replace("/");
+            router.replace("/");
           }}
           activeOpacity={0.8}
         >

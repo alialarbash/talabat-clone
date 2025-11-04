@@ -40,16 +40,23 @@ const _layout = () => {
         },
         statusBarStyle: "light",
       }}
+      // initialRouteName="index"
     >
       <Stack.Screen
         name="index"
         options={{
-          title: "Talabat",
+          title: "Explore",
 
           headerTitleAlign: "center",
         }}
       />
       <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      {/* <Stack.Screen
         name="home"
         options={{
           title: "Home",
@@ -58,7 +65,7 @@ const _layout = () => {
           headerBackVisible: false,
           headerLeft: () => <BackButton />,
         }}
-      />
+      /> */}
       <Stack.Screen
         name="restaurant/[id]"
         options={{
@@ -82,11 +89,25 @@ const _layout = () => {
       <Stack.Screen
         name="cart/[id]/[quantity]/[restaurantId]"
         options={{
-          title: "Cart",
+          title: "Your Cart 🛒",
+          headerStyle: { backgroundColor: "#E63946" },
 
-          headerTitleAlign: "left",
+          headerTitleAlign: "center",
           headerBackVisible: false,
           headerLeft: () => <BackButton />,
+          headerRight: () => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  alert("Cart cleared!");
+                }}
+              >
+                <Text style={{ color: "#fff", fontSize: 18, fontWeight: 500 }}>
+                  Clear
+                </Text>
+              </TouchableOpacity>
+            );
+          },
         }}
       />
       <Stack.Screen
@@ -109,7 +130,7 @@ const _layout = () => {
           },
         }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="orders"
         options={{
           title: "Orders",
@@ -118,8 +139,8 @@ const _layout = () => {
           headerBackVisible: false,
           headerLeft: () => <BackButton />,
         }}
-      />
-      <Stack.Screen
+      /> */}
+      {/* <Stack.Screen
         name="search"
         options={{
           title: "Search",
@@ -138,7 +159,7 @@ const _layout = () => {
           headerBackVisible: false,
           headerLeft: () => <BackButton />,
         }}
-      />
+      /> */}
       <Stack.Screen
         name="settings"
         options={{

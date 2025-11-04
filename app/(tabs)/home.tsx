@@ -7,8 +7,8 @@ import {
   StatusBar,
   TouchableOpacity,
 } from "react-native";
-import { restaurants } from "../data/restaurants";
-import { Colors } from "../components/Colors";
+import { restaurants } from "../../data/restaurants";
+import { Colors } from "../../components/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
@@ -76,7 +76,6 @@ export default function HomeScreen(_props: Props) {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    paddingBottom: 48,
     backgroundColor: "#FFF9F3",
   },
   container: {

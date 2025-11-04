@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import {
   View,
   Text,
@@ -6,10 +6,13 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, useNavigation } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { restaurants } from "../../../data/restaurants";
 import { Colors } from "../../../components/Colors";
+
+//  name="tracking/[orderId]/[restaurantId]"
+// options={{
 
 type Props = {};
 
@@ -64,6 +67,31 @@ export default function OrderTrackingScreen(_props: Props) {
       icon: "home",
     },
   ];
+
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: `Order #${orderId}`,
+
+      headerTitleAlign: "center",
+      headerBackVisible: false,
+      headerRight: () => {
+        return (
+          <TouchableOpacity
+            onPress={() => alert("Calling support...")}
+            activeOpacity={0.8}
+            style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
+          >
+            <Ionicons name="call" size={20} color="white" />
+            <Text style={{ color: "#fff", fontSize: 20, fontWeight: 500 }}>
+              Call
+            </Text>
+          </TouchableOpacity>
+        );
+      },
+    });
+  }, [orderId]);
 
   const getCurrentStatusIndex = () => {
     return orderSteps.findIndex((step) => step.key === status);

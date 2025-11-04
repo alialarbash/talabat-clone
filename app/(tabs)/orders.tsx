@@ -7,8 +7,8 @@ import {
   ScrollView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { pastOrders } from "../data/pastOrders";
-import { Colors } from "../components/Colors";
+import { pastOrders } from "../../data/pastOrders";
+import { Colors } from "../../components/Colors";
 import { Link } from "expo-router";
 
 type Props = {};

@@ -1,4 +1,4 @@
-import React from "react";
+import Reactr from "react";
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ export default function CartScreen(_props: Props) {
         {/* Header Section */}
         <View style={styles.headerSection}>
           <View style={styles.cartIconContainer}>
-            <Ionicons name="cart" size={60} color={Colors.orange} />
+            <Ionicons name="cart" size={60} color={"#E63946"} />
           </View>
           <Text style={styles.headerTitle}>Shopping Cart</Text>
           {restaurant && (
@@ -67,7 +67,7 @@ export default function CartScreen(_props: Props) {
                   <Ionicons
                     name="restaurant-outline"
                     size={24}
-                    color={Colors.orange}
+                    color={"#E63946"}
                   />
                 </View>
                 <View style={styles.orderItemInfo}>

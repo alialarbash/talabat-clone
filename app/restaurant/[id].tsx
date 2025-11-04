@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import {
   View,
   Text,
@@ -6,7 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, useNavigation } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "../../components/Colors";
 import { restaurants } from "../../data/restaurants";
@@ -21,11 +21,18 @@ export default function RestaurantDetailScreen(_props: Props) {
       return rest.id === id;
     }) ?? {};
   const router = useRouter();
+  const navigation = useNavigation();
 
   const filteredMenuItems = menuItems.filter((item) => {
     return item.id.slice(0, 2)[1] === id.slice(0, 2)[1];
   });
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: name ?? "Restaurant",
+      headerTitleAlign: "center",
+    });
+  }, [name]);
   return (
     <View style={styles.container}>
       <ScrollView
